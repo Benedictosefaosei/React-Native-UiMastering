@@ -4,12 +4,13 @@ import IconCircle from "./IconCircle";
 import SendIcon from "./SendIcon";
 import { s, vs } from "react-native-size-matters";
 
-const SocialBar = () => {
+const SocialBar = ({ title, icon }) => {
   return (
     <View>
       <View style={styles.container}>
-        <IconCircle />
-        <Text style={styles.text}>WhatsApp</Text>
+        {/* <IconCircle /> */}
+        <View style={styles.container1}>{icon}</View>
+        <Text style={styles.text}>{title}</Text>
         <SendIcon />
       </View>
       <Text style={styles.text2}></Text>
@@ -32,5 +33,14 @@ const styles = StyleSheet.create({
   text2: {
     borderBottomWidth: s(1),
     borderBottomColor: "#E4E6E8",
+  },
+  container1: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: s(46),
+    height: s(46),
+    borderRadius: s(24),
+    borderColor: "#E4E6E8",
+    borderWidth: 1,
   },
 });

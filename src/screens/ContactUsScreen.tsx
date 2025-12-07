@@ -3,9 +3,9 @@ import React from "react";
 import UserAvatar from "../Components/UserAvatar";
 import BackButton from "../Components/BackButton";
 import { s, vs } from "react-native-size-matters";
-import SendIcon from "../Components/SendIcon";
-import IconCircle from "../Components/IconCircle";
 import SocialBar from "../Components/SocialBar";
+
+import { FontAwesome, Entypo, AntDesign } from "@expo/vector-icons";
 
 const ContactUsScreen = () => {
   return (
@@ -24,11 +24,30 @@ const ContactUsScreen = () => {
       <View style={styles.mainBackground}>
         <Text style={styles.socialtext}>Social Media Platforms</Text>
         <View style={styles.socialbar}>
-          <SocialBar />
-          <SocialBar />
-          <SocialBar />
-          <SocialBar />
-          <SocialBar />
+          <SocialBar
+            icon={<FontAwesome name="whatsapp" size={30} color="#178AD9" />}
+            title="WhatsApp"
+          />
+          <SocialBar
+            icon={
+              <Entypo name="facebook-with-circle" size={30} color="#178AD9" />
+            }
+            title="FaceBook"
+          />
+          <SocialBar
+            icon={<Entypo name="instagram" size={30} color="#178AD9" />}
+            title="Instagram"
+          />
+          <SocialBar
+            icon={<AntDesign name="twitter" size={30} color="#178AD9" />}
+            title="Twitter"
+          />
+          <SocialBar
+            icon={
+              <Entypo name="linkedin-with-circle" size={30} color="#178AD9" />
+            }
+            title="LinkedIn"
+          />
         </View>
       </View>
     </View>

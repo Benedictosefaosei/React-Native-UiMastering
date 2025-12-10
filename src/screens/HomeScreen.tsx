@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
 import { s, vs } from "react-native-size-matters";
 import TopTabs from "../Components/TopTabs";
+import Meditation from "../Components/Meditation";
+import { dummyData } from "../../Data/data";
 
 const HomeScreen = () => {
   return (
@@ -9,6 +11,23 @@ const HomeScreen = () => {
       <Text style={styles.titleText}>Meditations</Text>
       <Text style={styles.subTitle}>Lorem Ipsum is simply dummy text</Text>
       <TopTabs />
+
+      <FlatList
+        data={dummyData}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Meditation
+            imageUrl={item.image}
+            title={item.title}
+            date={item.date}
+          />
+        )}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        contentContainerStyle={{
+          paddingBottom: vs(200),
+        }}
+      />
     </View>
   );
 };

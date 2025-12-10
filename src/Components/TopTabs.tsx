@@ -13,6 +13,7 @@ const TopTabs = () => {
           <TouchableOpacity
             style={[styles.tabButton, activeTab === tabName && styles.isActive]}
             onPress={() => setActiveTab(tabName)}
+            key={tabName}
           >
             <Text style={styles.textStyle}>{tabName}</Text>
           </TouchableOpacity>
